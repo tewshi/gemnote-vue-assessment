@@ -111,7 +111,9 @@ export default {
       this.isOpen = !this.isOpen;
     },
     hideDrawer() {
-      this.isOpen = false;
+      if (this.isMobile && this.isOpen) {
+        this.isOpen = false;
+      }
     },
   },
   watch: {
