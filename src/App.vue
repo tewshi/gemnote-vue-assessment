@@ -27,7 +27,8 @@
       >
         <div class="sidebar-top mb-6">
           <router-link
-            to="/"
+            :to="{ name: 'home' }"
+            @click.native="hideDrawer"
             class="block text-left pb-6 xl:pt-4 hover:bg-black-200 mb-3 lg:mb-4 xl:mb-6"
           >
             <img src="./assets/logo.png" alt="Gemnote Logo" class="w-44" />
@@ -52,7 +53,7 @@
       >
         <nav class="px-6 py-4 flex">
           <button
-            class="mr-4 focus:outline-none"
+            class="focus:outline-none"
             aria-label="Open Menu"
             @click="toggleDrawer"
           >
@@ -71,6 +72,7 @@
           <router-link to="/" class="mx-auto block">
             <img src="./assets/logo.png" alt="Gemnote Logo" class="h-10" />
           </router-link>
+          <div class="w-8"></div>
         </nav>
         <div
           class="pt-8 px-7 pb-2 mb-3 lg:pt-12 lg:px-4 lg:pb-3 xl:pt-16 xl:px-14 xl:pb-4"
