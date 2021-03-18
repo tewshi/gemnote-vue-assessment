@@ -22,7 +22,7 @@
       </transition>
       <nav
         id="nav"
-        class="col-span-2 h-full min-h-screen pt-8 px-7 pb-2 mb-3 lg:pt-12 lg:px-10 lg:pb-3 xl:pt-16 xl:px-14 xl:pb-4 divide-solid divide-y divide-gray-500 -- transform top-0 left-0 fixed xl:relative overflow-auto ease-in-out transition-all duration-300 z-30"
+        class="col-span-2 h-full min-h-screen pt-8 px-7 pb-2 mb-3 lg:pt-12 lg:px-10 lg:pb-3 xl:pt-16 xl:px-14 xl:pb-4 divide-solid divide-y divide-gray-500 -- transform top-0 left-0 fixed lg:relative overflow-auto ease-in-out transition-all duration-300 z-30"
         :class="isOpen ? 'translate-x-0' : '-translate-x-full'"
       >
         <div class="sidebar-top mb-6">
@@ -47,7 +47,7 @@
         </div>
       </nav>
       <div
-        class="col-span-12 xl:col-span-10 h-full min-h-screen transform top-0 ease-in-out transition-all duration-300"
+        class="col-span-12 lg:col-span-10 h-full min-h-screen transform top-0 ease-in-out transition-all duration-300"
         :class="isMobile ? 'translate-y-0' : '-translate-y-20'"
       >
         <nav class="px-6 py-4 flex">
@@ -73,7 +73,7 @@
           </router-link>
         </nav>
         <div
-          class="pt-8 px-7 pb-2 mb-3 lg:pt-12 lg:px-10 lg:pb-3 xl:pt-16 xl:px-14 xl:pb-4"
+          class="pt-8 px-7 pb-2 mb-3 lg:pt-12 lg:px-4 lg:pb-3 xl:pt-16 xl:px-14 xl:pb-4"
         >
           <router-view />
         </div>
@@ -126,7 +126,7 @@ export default {
     },
   },
   mounted() {
-    this.isMobile = window.innerWidth <= 1280;
+    this.isMobile = window.innerWidth < 1024;
     this.isOpen = !this.isMobile;
 
     document.addEventListener("keydown", (e) => {
@@ -136,7 +136,7 @@ export default {
     });
 
     window.addEventListener("resize", (e) => {
-      this.isMobile = e.target.innerWidth <= 1280;
+      this.isMobile = e.target.innerWidth < 1024;
       this.isOpen = !this.isMobile;
     });
   },
