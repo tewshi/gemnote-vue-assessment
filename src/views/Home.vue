@@ -76,7 +76,9 @@
         <h3 class="text-lg font-bold mb-4 lg:mb-8">
           Trending gifts in your store
         </h3>
-        <div class="lg:h-48 flex flex-col lg:flex-row">
+        <div
+          class="lg:h-48 flex flex-col lg:flex-row items-center lg:items-stretch"
+        >
           <img
             v-for="gift in gifts"
             :key="gift.id"
